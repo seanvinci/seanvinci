@@ -1,0 +1,179 @@
+/* Rests */
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Global */
+
+body {
+  color: #222;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 100%;
+  letter-spacing: -0.03rem;
+}
+
+
+/* Primary Nav */
+
+.main-nav {
+  background-color: rgba(255, 255, 255, 0.85);
+  left: 0;
+  min-height: 4rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.main-nav nav {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-nav h1 {
+  font-size: 1.5rem;
+  line-height: 1;
+  left: 1rem;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-nav h1 a { font-size: inherit; }
+
+.main-nav h1 a:hover {
+  text-decoration: none;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-right: 0.9rem;
+}
+
+.main-nav li:last-child { margin-right: 0; }
+
+.main-nav a {
+  color: #222;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  text-decoration: none;
+}
+
+.main {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 15rem;
+}
+
+
+/* Projects */
+
+.projects {}
+
+.projects ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.projects li {
+  margin-bottom: 1rem;
+}
+
+.projects a {
+  color: #333;
+  font-size: 2.8rem;
+  font-weight: 600;
+  letter-spacing: -0.05rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.projects a:hover {
+  background-color: yellow;
+  z-index: 1;
+}
+
+.projects a span {
+  font-weight: 300;
+  margin-right: 0.8rem;
+}
+
+
+/* Splash Page */
+
+.splash-nav {
+  height: 100%;
+  width: 100%;
+}
+
+.splash-nav div {
+  display: inline-block;
+  height: 50%;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+
+.splash-nav div:first-child { border-bottom: 2px solid #222; }
+
+.splash-nav div a {
+  background-color: #fff;
+  color: #222;
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: 600;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+}
+
+.splash-nav div a:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.splash-nav div a span {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media only screen and (min-width: 48em) {
+
+  .splash-nav div {
+    height: 100%;
+    width: 50%;
+  }
+
+  .splash-nav div:first-child {
+    border-bottom: none;
+    border-right: 2px solid #222;
+  }
+
+}
