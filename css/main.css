@@ -41,40 +41,74 @@ h2 {
   font-size: 3rem;
 }
 
+/*p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}*/
+
+.feature-text p,
 p.feature-text {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 600;
   letter-spacing: -0.05rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   max-width: 55rem;
 }
 
+.feature-text a {
+  color: gold;
+  text-decoration: none;
+}
+
+.feature-text a:hover {
+  color: gold;
+  text-decoration: underline;
+}
+
+
+/* Links */
+
+a {
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
 
 /**** THEMES ****/
 
 body.dark-theme { background-color: #222; }
 
-.dark-theme h1,
-.dark-theme h2,
-.dark-theme h3,
-.dark-theme h4,
-.dark-theme h5,
-.dark-theme p {
-  color: #fff
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme p,
+body.dark-theme a {
+  color: #fff;
 }
 
-.dark-theme .main-nav-banner { background-color: rgba(34, 34, 34, 0.9); }
+body.dark-theme .projects a:hover { color: #222; }
 
-.dark-theme .nav-icon > div,
-.dark-theme .nav-icon > div:before,
-.dark-theme .nav-icon > div:after {
+body.dark-theme .main-nav-banner { background-color: rgba(34, 34, 34, 0.9); }
+
+body.dark-theme .nav-icon > div,
+body.dark-theme .nav-icon > div:before,
+body.dark-theme .nav-icon > div:after {
   background-color: #fff;
 }
+
+.black { color: black; }
+.yellow { color: yellow; }
+.green { color: mediumspringgreen; }
 
 
 /**** SITE STRUCTURE ****/
 
-.main { margin-top: 5rem; }
+.main {
+  margin-top: 5rem;
+  padding-top: 10rem;
+}
 
 .content-block {
   padding-left: 6rem;
@@ -101,7 +135,9 @@ body.dark-theme { background-color: #222; }
   z-index: 1001;
 }
 
-.nav-open .main-nav-banner { background-color: transparent; }
+body.nav-open .main-nav-banner { background-color: transparent; }
+
+body.nav-open .current-page { display: none; }
 
 .main-nav-banner h1 {
   font-size: 1.5rem;
@@ -113,7 +149,7 @@ body.dark-theme { background-color: #222; }
   transform: translateY(-50%);
 }
 
-.nav-open .main-nav-banner h1 { color: #222; }
+body.nav-open .main-nav-banner h1 { color: #222; }
 
 .main-nav-banner h1 a {
   color: inherit;
@@ -123,8 +159,18 @@ body.dark-theme { background-color: #222; }
 
 .main-nav-banner h1 a:hover { text-decoration: none; }
 
+.main-nav-banner h1 .current-page {
+  font-weight: 300;
+  margin-left: 0.5rem;
+}
+
+.main-nav-banner h1 .divider {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .main-nav nav {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: mediumspringgreen;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -159,12 +205,13 @@ body.dark-theme { background-color: #222; }
   color: #222;
   font-size: 3.5rem;
   font-weight: 600;
+  letter-spacing: -0.08 rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
 }
 
 .main-nav nav a:hover {
-  background-color: yellow;
+  background-color: mediumspringgreen;
   text-decoration: none;
   color: #222;
 }
@@ -233,7 +280,7 @@ body:not(.nav-open) .nav-icon:hover > div:after {
 
 /* Nav open 'x' revealed */
 
-.nav-open .nav-icon > div { background-color: transparent; }
+body.nav-open .nav-icon > div { background-color: transparent; }
 
 .nav-open .nav-icon > div:before,
 .nav-open .nav-icon > div:after {
@@ -258,13 +305,6 @@ body:not(.nav-open) .nav-icon:hover > div:after {
   top: 0 !important;
 }
 
-
-
-
-
-
-
-
 /* Projects */
 
 .projects {
@@ -275,9 +315,7 @@ body:not(.nav-open) .nav-icon:hover > div:after {
   padding: 0;
 }
 
-.projects li {
-  margin-bottom: 1rem;
-}
+.projects li { margin-bottom: 1rem; }
 
 .projects a {
   color: #333;
@@ -290,7 +328,8 @@ body:not(.nav-open) .nav-icon:hover > div:after {
 }
 
 .projects a:hover {
-  background-color: yellow;
+  background-color: mediumspringgreen;
+  text-decoration: none;
   z-index: 1;
 }
 
@@ -298,7 +337,6 @@ body:not(.nav-open) .nav-icon:hover > div:after {
   font-weight: 300;
   margin-right: 0.8rem;
 }
-
 
 /* Splash Page */
 
