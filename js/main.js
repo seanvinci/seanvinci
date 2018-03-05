@@ -1,6 +1,9 @@
 
+// Vars
 var $body = $('body');
 
+
+// Functions
 
 // Main nav
 
