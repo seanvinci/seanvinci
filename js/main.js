@@ -27,7 +27,7 @@ $(document).ready(function() {
   // Header Navigation
 
   // Open or close navigation when hamburger is clicked
-  $('.nav-icon').click(function() {
+  $('.nav-menu-icon').click(function() {
     toggleNav();
   });
 
