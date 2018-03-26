@@ -96,14 +96,18 @@ a:hover { text-decoration: underline; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 1001;
 }
 
 .nav-main-banner h1 {
+  color: #fff;
   display: inline-block;
   font-size: 1.5rem;
   line-height: 1;
   margin: 0;
 }
+
+.nav-open .nav-main-banner h1 { color: #333; }
 
 .nav-main-banner .current-section { display: none; }
 
@@ -111,6 +115,7 @@ a:hover { text-decoration: underline; }
   color: inherit;
   font-size: inherit;
   text-decoration: none;
+  transition: none;
 }
 
 .nav-main-banner h1 a:hover {
@@ -123,12 +128,11 @@ a:hover { text-decoration: underline; }
   bottom: 0;
   left: -9999px;
   opacity: 0;
-  padding: 7rem 2rem 2rem;
+  padding: 6rem 1rem 1rem;
   position: fixed;
   right: 0;
   top: 0;
-  visibility: hidden;
-  width: 15rem;
+  width: 100%;
   z-index: 1000;
 }
 
@@ -139,15 +143,16 @@ a:hover { text-decoration: underline; }
   z-index: 1001;
 }
 
-.nav-main nav li { margin-top: 0.8rem; }
+.nav-main nav li { margin-top: 1rem; }
 
 .nav-main nav li:first-child { margin-top: 0; }
 
 .nav-main nav a {
-  color: #222;
-  font-size: 1.6rem;
+  color: #333;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: -0.08rem;
+  line-height: 1.1;
   text-decoration: none;
 }
 
@@ -159,9 +164,40 @@ a:hover { text-decoration: underline; }
 .nav-open .nav-main-banner { z-index: 999; }
 
 .nav-open .nav-main nav {
-  left: auto;
   opacity: 1;
-  visibility: visible;
+  left: auto;
+}
+
+@media only screen and (min-width: 48em) {
+
+  .nav-main-banner > div { left: 1.5rem; }
+
+  .nav-open .nav-main-banner h1 { color: #fff; }
+
+  .nav-main-banner .current-section {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-left: 0.5rem;
+  }
+
+  .nav-main nav {
+    padding: 7rem 2rem 2rem;
+    width: 15rem;
+  }
+
+  .nav-main nav a {
+    font-size: 1.6rem;
+  }
+
+}
+
+@media only screen and (min-width: 64em) {
+
+  .nav-main-banner { min-height: 5rem; }
+
+  .nav-main-banner > div { left: 2rem; }
+
 }
 
 /* Nav Menu Icon (Hamburger) */
@@ -254,24 +290,11 @@ body.nav-open .nav-menu-icon > div { background-color: transparent; }
 
 @media only screen and (min-width: 48em) {
 
-  .nav-main-banner > div { left: 1.5rem; }
-
-  .nav-main-banner .current-section {
-    display: inline-block;
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-left: 0.5rem;
-  }
-
   .nav-menu-icon { right: 1.5rem; }
 
 }
 
 @media only screen and (min-width: 64em) {
-
-  .nav-main-banner { min-height: 5rem; }
-
-  .nav-main-banner > div { left: 2rem; }
 
   .nav-menu-icon { right: 2rem; }
 
@@ -327,7 +350,13 @@ body.nav-open .nav-menu-icon > div { background-color: transparent; }
 
 /* Projects */
 
-.projects {
+.projects h2 {
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+}
+
+.projects ul {
   list-style: none;
   margin-bottom: 0;
   margin-top: 0;
@@ -345,10 +374,10 @@ body.nav-open .nav-menu-icon > div { background-color: transparent; }
 .projects a {
   color: #fff;
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: -0.05rem;
-  line-height: 1.2;
+  line-height: 1.1;
   margin: 0;
   text-align: left;
   text-decoration: none;
@@ -362,6 +391,8 @@ body.nav-open .nav-menu-icon > div { background-color: transparent; }
 }
 
 @media only screen and (min-width: 48em) {
+
+  .projects h2 { display: none; }
 
   .projects a { font-size: 2rem; }
 
