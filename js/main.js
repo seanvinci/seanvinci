@@ -20,14 +20,20 @@ function resetNav() {
   $body.removeClass('nav-open clip');
 }
 
-
+function openProjectModal() {
+  if ($body.hasClass('project-modal')) {
+    $body.removeClass('project-modal clip');
+  } else {
+    $body.addClass('project-modal clip');
+  }
+}
 
 $(document).ready(function() {
 
   // Header Navigation
 
   // Open or close navigation when hamburger is clicked
-  $('.nav-menu-icon').click(function() {
+  $('.main-nav-trigger').click(function() {
     toggleNav();
   });
 
