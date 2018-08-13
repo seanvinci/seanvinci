@@ -1,52 +1,62 @@
 
 // Vars
-var $body = $('body');
+const $body = $('body');
+const $modal = $('.modal');
 
 
 // Functions
 
-// Main nav
+// Main nav control
 
-// Open and close main navigation
 function toggleNav() {
   if ($body.hasClass('nav-open')) {
-    $body.removeClass('nav-open clip');
+    closeNav();
   } else {
     $body.addClass('nav-open clip');
   }
 }
 
-function resetNav() {
+function closeNav() {
   $body.removeClass('nav-open clip');
 }
 
-function openProjectModal() {
-  if ($body.hasClass('project-modal')) {
-    $body.removeClass('project-modal clip');
-  } else {
-    $body.addClass('project-modal clip');
-  }
-}
 
 $(document).ready(function() {
 
-  // Header Navigation
+  // Open and close main nav
 
-  // Open or close navigation when hamburger is clicked
-  $('.main-nav-trigger').click(function() {
+  // Toggle main nav open or closed with hamburger button
+  $('.main-nav-toggle').click(function() {
     toggleNav();
   });
 
-  // Close navigation when ESC key is used
+  // Close nav with ESC key
   $(document).on('keyup', function(e) {
     if (e.keyCode == 27) {
-      resetNav();
+      closeNav();
     }
   });
 
-  // Close navigation when anywhere in the webpage is clicked...
-  $('.nav-overlay').click(function() {
-    resetNav();
+
+  // Open and close modals
+
+  // Open modal with modal trigger
+  $('.modal-open').click(function() {
+    $body.addClass('clip');
+    $(this).siblings('.modal').addClass('modal-active');
+  });
+
+  // Close modal with close 'x'
+  $('.modal-close').click(function() {
+    $body.removeClass('clip');
+    $(this).parents('.modal').removeClass('modal-active');
+  });
+
+  // Close modal with ESC key
+  $(document).on('keyup', function(e) {
+    if (e.keyCode == 27) {
+      $modal.removeClass('modal-active');
+    }
   });
 
 });
